@@ -1,6 +1,5 @@
 #  FinanceLake - Ingestion de données boursières avec yfinance
 
-Ce projet permet d’ingérer des données boursières en temps réel depuis **Yahoo Finance**, avec une fonction Python simple et des tests automatisés grâce à `pytest`.
 
 ---
 
@@ -16,7 +15,6 @@ Ce projet permet d’ingérer des données boursières en temps réel depuis **Y
 
 ### 1. Cloner le dépôt
 
-```bash
 git clone https://github.com/<ton-utilisateur>/financelake.git
 cd financelake
 
@@ -44,7 +42,6 @@ yfinance
 pytest
 pytest-mock
 
-#Puis installe :
 
 pip install -r requirements.txt
 
