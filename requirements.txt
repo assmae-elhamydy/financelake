@@ -1,4 +1,5 @@
-pandas
 yfinance
+kafka
+pandas
 pytest
 pytest-mock

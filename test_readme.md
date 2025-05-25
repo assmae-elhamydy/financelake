@@ -1,65 +1,70 @@
 # 📈 FinanceLake
 
-**FinanceLake** est un projet open-source dédié à l’ingestion et à l’analyse de données financières, en particulier des données boursières issues de Yahoo Finance via la bibliothèque `yfinance`.
+**FinanceLake** is an open-source project dedicated to ingesting and analyzing financial data, particularly stock market data retrieved from Yahoo Finance using the `yfinance` library.
 
-Ce dépôt comprend une fonction clé (`fetch_stock_data`) et son jeu de tests unitaires permettant de garantir sa fiabilité et son bon fonctionnement.
-
----
-
-## 🎯 Objectifs
-
-- Récupérer les données boursières à partir de Yahoo Finance.
-- Retourner les colonnes essentielles : `Open`, `Close`, `Volume`.
-- Assurer la fiabilité de la fonction à l’aide de tests unitaires.
-- Éviter les appels réels à l'API dans les pipelines CI/CD en utilisant du mocking.
+This repository includes a core function (`fetch_stock_data`) along with its unit tests to ensure reliability and proper functionality.
 
 ---
 
+## 🎯 Objectives
 
+- Retrieve stock data from Yahoo Finance.  
+- Return the key columns: `Open`, `Close`, `Volume`.  
+- Ensure the function's reliability through unit testing.  
+- Avoid real API calls in CI/CD pipelines by using mocking.
 
-## 🧪 Tests unitaires
+---
 
-Le projet utilise `pytest` pour valider le bon fonctionnement de la fonction `fetch_stock_data`.
+## 🧪 Unit Tests
 
-### ✔️ Ce que les tests vérifient
+The project uses `pytest` to validate the correct behavior of the `fetch_stock_data` function.
 
-- La fonction retourne un `DataFrame` non vide.
-- Les colonnes `Open`, `Close` et `Volume` sont bien présentes.
-- Les appels à `yfinance.Ticker().history()` sont mockés lors des tests CI/CD.
+### ✔️ What the Tests Check
 
-## 📌 Exécution des tests
+- The function returns a non-empty `DataFrame`.  
+- The `Open`, `Close`, and `Volume` columns are present.  
+- Calls to `yfinance.Ticker().history()` are mocked during CI/CD tests.
+
+---
+
+## 📌 Running the Tests
 
 ```bash
 pytest
+```
 
-##  Assurez-vous d’avoir installé les dépendances ci-dessous.
+> **Make sure you’ve installed the dependencies below.**
 
-1. Cloner le dépôt :
+1. Clone the repository:
 
-git clone https://github.com/votre-utilisateur/financelake.git
+```bash
+git clone https://github.com/your-username/financelake.git
 cd financelake
+```
 
-2. Créer et activer un environnement virtuel :
+2. Create and activate a virtual environment:
 
+```bash
 python -m venv venv
 source venv/bin/activate      # Linux/macOS
 venv\Scripts\activate         # Windows
+```
 
+3. Install the dependencies:
 
-3. Installer les dépendances :
-
+```bash
 pip install -r requirements.txt
+```
 
-👨‍💻 Contribution
+---
 
-Les contributions sont les bienvenues !
+## 👨‍💻 Contributing
 
-Forkez ce dépôt.
+Contributions are welcome!
 
-Créez une branche : git checkout -b nouvelle-fonctionnalite.
+- Fork this repository.  
+- Create a branch: `git checkout -b new-feature`.  
+- Commit your changes: `git commit -m "Add a feature"`.  
+- Push to your fork: `git push origin new-feature`.  
+- Create a Pull Request.
 
-Commitez vos modifications : git commit -m "Ajout d’une fonctionnalité".
-
-Pushez sur votre fork : git push origin nouvelle-fonctionnalite.
-
-Créez une Pull Request.
