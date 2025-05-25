@@ -15,14 +15,7 @@ Ce dépôt comprend une fonction clé (`fetch_stock_data`) et son jeu de tests u
 
 ---
 
-## 🗂️ Structure du projet
 
-financelake/
-├── stock_ingestion.py # Contient la fonction fetch_stock_data
-├── tests/
-│ └── test_stock_ingestion.py # Tests unitaires (réels et mockés)
-├── requirements.txt # Liste des dépendances
-└── README.md # Ce fichier
 
 ## 🧪 Tests unitaires
 
