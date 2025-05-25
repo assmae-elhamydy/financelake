@@ -1,2 +1,4 @@
+pandas
 yfinance
-kafka
+pytest
+pytest-mock

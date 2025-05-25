@@ -1,51 +1,72 @@
-# Unit Test – Validation of the `fetch_stock_data` Function Using yfinance
+# 📈 FinanceLake
 
-## ✅ Pre-Checklist
+**FinanceLake** est un projet open-source dédié à l’ingestion et à l’analyse de données financières, en particulier des données boursières issues de Yahoo Finance via la bibliothèque `yfinance`.
 
-- I have read the project’s contribution guidelines.
-- I have installed the required dependencies:
-  - `pytest`
-  - `yfinance`
-  - `pytest-mock`
-- I have tested the `fetch_stock_data()` function locally.
+Ce dépôt comprend une fonction clé (`fetch_stock_data`) et son jeu de tests unitaires permettant de garantir sa fiabilité et son bon fonctionnement.
 
-## 🎯 Objective
+---
 
-Validate that the `fetch_stock_data()` function:
+## 🎯 Objectifs
 
-- Correctly retrieves valid stock data from Yahoo Finance.
-- Returns a non-empty pandas DataFrame.
-- Includes essential columns: `Open`, `Close`, and `Volume`.
+- Récupérer les données boursières à partir de Yahoo Finance.
+- Retourner les colonnes essentielles : `Open`, `Close`, `Volume`.
+- Assurer la fiabilité de la fonction à l’aide de tests unitaires.
+- Éviter les appels réels à l'API dans les pipelines CI/CD en utilisant du mocking.
 
-## 📌 Tasks to Complete
+---
 
-1. **Create test file**:  
-   `tests/test_stock_ingestion.py`
-
-2. **Write a unit test that:**
-   - Calls `fetch_stock_data("AAPL")`.
-   - Asserts the return is a non-empty `pandas.DataFrame`.
-   - Checks for the presence of the columns: `Open`, `Close`, `Volume`.
-
-3. **Add a test with mocking:**
-   - Use `pytest-mock` to mock the call to `yfinance.Ticker().history()`.
-   - This avoids live API calls during CI/CD runs.
-
-4. **Run tests:**
-   - Use `pytest` to execute and ensure all tests pass.
-
-## 🛠️ Technologies Used
-
-- Test framework: [pytest](https://docs.pytest.org/)
-- Data ingestion library: [yfinance](https://pypi.org/project/yfinance/)
-- Mocking framework: [pytest-mock](https://pypi.org/project/pytest-mock/)
-
-## 📁 Recommended Project Structure
+## 🗂️ Structure du projet
 
 financelake/
-├── stock_ingestion.py # Contains the fetch_stock_data() function
+├── stock_ingestion.py # Contient la fonction fetch_stock_data
 ├── tests/
-│ └── test_stock_ingestion.py # Contains the unit tests
-└── requirements.txt # Lists the project dependencies
+│ └── test_stock_ingestion.py # Tests unitaires (réels et mockés)
+├── requirements.txt # Liste des dépendances
+└── README.md # Ce fichier
+
+## 🧪 Tests unitaires
+
+Le projet utilise `pytest` pour valider le bon fonctionnement de la fonction `fetch_stock_data`.
+
+### ✔️ Ce que les tests vérifient
+
+- La fonction retourne un `DataFrame` non vide.
+- Les colonnes `Open`, `Close` et `Volume` sont bien présentes.
+- Les appels à `yfinance.Ticker().history()` sont mockés lors des tests CI/CD.
+
+## 📌 Exécution des tests
+
+```bash
+pytest
+
+##  Assurez-vous d’avoir installé les dépendances ci-dessous.
+
+1. Cloner le dépôt :
+
+git clone https://github.com/votre-utilisateur/financelake.git
+cd financelake
+
+2. Créer et activer un environnement virtuel :
+
+python -m venv venv
+source venv/bin/activate      # Linux/macOS
+venv\Scripts\activate         # Windows
 
 
+3. Installer les dépendances :
+
+pip install -r requirements.txt
+
+👨‍💻 Contribution
+
+Les contributions sont les bienvenues !
+
+Forkez ce dépôt.
+
+Créez une branche : git checkout -b nouvelle-fonctionnalite.
+
+Commitez vos modifications : git commit -m "Ajout d’une fonctionnalité".
+
+Pushez sur votre fork : git push origin nouvelle-fonctionnalite.
+
+Créez une Pull Request.
